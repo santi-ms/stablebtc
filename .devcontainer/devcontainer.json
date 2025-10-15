@@ -1,0 +1,6 @@
+{
+  "name": "stablebtc",
+  "build": { "dockerfile": "Dockerfile" },
+  "remoteUser": "dev",
+  "postCreateCommand": "bash -lc 'set -euo pipefail; curl -fsSL https://raw.githubusercontent.com/foundry-rs/starknet-foundry/v0.23.0/scripts/install.sh | bash; /home/dev/.local/bin/snfoundryup || snfoundryup; snforge --version; sncast --version'"
+}

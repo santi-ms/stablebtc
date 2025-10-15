@@ -1,0 +1,19 @@
+# General
+.DS_Store
+node_modules
+dist
+build
+
+# Devcontainer
+.devcontainer/*.log
+
+# Frontend
+frontend/.next
+frontend/out
+
+# Rust/Cairo
+target
+contracts/target
+
+# pnpm
+pnpm-lock.yaml

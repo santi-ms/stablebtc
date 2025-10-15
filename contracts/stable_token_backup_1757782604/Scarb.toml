@@ -1,0 +1,23 @@
+[package]
+name = "stable_token"
+version = "0.1.0"
+cairo-version = "2.12.1"
+edition = "2023_10"
+
+[dependencies]
+starknet = "2.12.1"
+
+# Exporta una lib "normal" para que otros crates (vault) puedan importar
+[lib]
+name = "stable_token"
+
+# Compila el contrato #[starknet::contract] que está en src/lib.cairo
+[[target.starknet-contract]]
+sierra = true
+casm = true
+
+[scripts]
+test = "snforge test"
+
+[cairo]
+sierra-replace-ids = true

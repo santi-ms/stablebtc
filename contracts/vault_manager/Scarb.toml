@@ -1,0 +1,22 @@
+[package]
+name = "vault_manager"
+version = "0.1.0"
+cairo-version = "2.12.1"
+edition = "2023_11"
+
+[dependencies]
+starknet = "2.12.1"
+
+# Habilitá sierra/casm en la lib (no hace daño y a veces ciertas tools lo piden)
+[lib]
+sierra = true
+casm = true
+
+# CLAVE: decirle a Scarb que compile contratos Starknet
+[[target.starknet-contract]]
+sierra = true
+casm = true
+
+# Opcional, pero útil para leer artefactos
+[cairo]
+sierra-replace-ids = true
