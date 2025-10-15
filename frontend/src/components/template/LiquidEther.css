@@ -1,0 +1,99 @@
+/* LiquidEther.css - Balance entre calidad y rendimiento */
+
+.liquid-ether-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  /* Blend mode para efecto etéreo */
+  mix-blend-mode: screen;
+  /* GPU acceleration */
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.liquid-ether-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  /* Blur sutil como el original */
+  filter: blur(0.3px);
+  opacity: 0.9;
+  /* GPU optimizations */
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Overlay sutil */
+.liquid-ether-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.06) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Tablets: calidad completa */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .liquid-ether-container canvas {
+    filter: blur(0.25px);
+    opacity: 0.88;
+  }
+}
+
+/* Móviles: optimización agresiva solo aquí */
+@media (max-width: 767px) {
+  .liquid-ether-container {
+    mix-blend-mode: normal;
+  }
+  
+  .liquid-ether-container canvas {
+    filter: none;
+    opacity: 0.75;
+  }
+  
+  .liquid-ether-container::after {
+    display: none;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .liquid-ether-container canvas {
+    opacity: 0.65;
+  }
+}
+
+/* Reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .liquid-ether-container {
+    mix-blend-mode: normal;
+  }
+  
+  .liquid-ether-container canvas {
+    filter: none;
+    opacity: 0.5;
+  }
+  
+  .liquid-ether-container::after {
+    display: none;
+  }
+}
+
+/* Hardware acceleration */
+.liquid-ether-container *,
+.liquid-ether-container *::before,
+.liquid-ether-container *::after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

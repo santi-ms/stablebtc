@@ -1,0 +1,67 @@
+[
+  {
+    "name": "get_vault",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "user",
+        "type": "felt"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "vault",
+        "type": "(felt, felt)"
+      }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "name": "deposit",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "amount",
+        "type": "Uint256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "name": "withdraw",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "amount",
+        "type": "Uint256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "name": "mint",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "amount",
+        "type": "Uint256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  },
+  {
+    "name": "repay",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "amount",
+        "type": "Uint256"
+      }
+    ],
+    "outputs": [],
+    "state_mutability": "external"
+  }
+]

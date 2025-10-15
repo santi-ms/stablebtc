@@ -1,0 +1,26 @@
+[
+  {
+    "name": "get_price",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "price",
+        "type": "felt"
+      }
+    ],
+    "state_mutability": "view"
+  },
+  {
+    "name": "get_decimals",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "decimals",
+        "type": "felt"
+      }
+    ],
+    "state_mutability": "view"
+  }
+]
